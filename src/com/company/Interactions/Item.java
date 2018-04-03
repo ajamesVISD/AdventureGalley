@@ -17,6 +17,10 @@ public abstract class Item {
         availableCommands = new HashMap<String, Executable>();
     }
 
+    public Item() {
+
+    }
+
     public void addExecutable(String s, Executable e) {
         availableCommands.put(s, e);
     }

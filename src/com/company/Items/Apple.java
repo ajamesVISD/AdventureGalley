@@ -13,9 +13,10 @@ public class Apple extends Item {
     private Date bestByDate;
 
     public Apple() {
-        super("Pencil", "An ordinary looking orange pencil", true);
+        super("Apple", "An ordinary looking orange pencil", true);
         birthdate = new Date();
         bestByDate = new Date(birthdate.getTime() + 5*60);
+
     }
 
     @Override

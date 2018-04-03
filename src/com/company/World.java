@@ -44,9 +44,12 @@ public class World {
         home.addItem(new Apple());
         home.addItem(new Banana());
         home.addItem(new Hammer());
+        home.addItem(new Watch());
         garage.addItem(new Mug());
         arcade.addRoom(home);
         arcade.addRoom(cave);
+
+        arcade.addItem(new Apple());
 
         home.addRoom(garage);
         home.addRoom(cave);

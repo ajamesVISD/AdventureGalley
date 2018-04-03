@@ -12,5 +12,6 @@ public class Banana extends Item {
         super("banana", "a delicious yellow banana.", true);
         addExecutable("examine", new Examine());
         addExecutable("reverse", new Reverse());
+        addExecutable("punch", new Punch());
     }
 }
