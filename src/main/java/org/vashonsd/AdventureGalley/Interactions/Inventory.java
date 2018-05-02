@@ -1,4 +1,4 @@
-package org.vashonsd.AdventureGalley;
+package org.vashonsd.AdventureGalley.Interactions;
 import org.vashonsd.AdventureGalley.Interactions.Item;
 
 import java.util.HashMap;
@@ -6,25 +6,25 @@ import java.util.HashMap;
 
 public class Inventory {
 
-    HashMap<String, Item> inventory;
+    HashMap<String, Actor> inventory;
 
     public Inventory() {
-        inventory = new HashMap<String, Item>();
+        inventory = new HashMap<String, Actor>();
     }
 
     /*
     * Puts an Item into the inventory.
     * */
-    public void addItem(Item i) {
-        inventory.put(i.getName(), i);
+    public void addItem(Actor a) {
+        inventory.put(a.getName(), a);
     }
 
     /*
     * Removes Item from the inventory.
     * @param    i The item to be removed.
     * */
-    public void removeItem (Item i) {
-        inventory.remove(i.getName());
+    public void removeItem (Actor a) {
+        inventory.remove(a.getName());
     }
 
     /*
@@ -37,7 +37,7 @@ public class Inventory {
     /*
     * Do not call this method unless you are sure the item is in the inventory.
     * */
-    public Item getItem(String name) {
+    public Actor getActor(String name) {
         return inventory.get(name);
     }
 

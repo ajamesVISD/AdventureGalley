@@ -4,7 +4,7 @@ import org.vashonsd.AdventureGalley.Interactions.Item;
 
 public class Mug extends Item {
     public Mug(){
-        super("Mug","An artisan mug",false);
+        super("Mug","An artisan mug");
     }
     public String handle(String s){
         if(s.equalsIgnoreCase("examine")){

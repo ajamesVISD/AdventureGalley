@@ -4,9 +4,10 @@ import org.vashonsd.AdventureGalley.Interactions.Item;
 
 public class Sickle extends Item {
 
-    public Sickle (String name, String description, boolean edible) {
-        super("sickle", "Communism is not love. Communism is a hammer which we use to crush the enemy", false);
+    public Sickle () {
+        super("sickle", "Communism is not love. Communism is a hammer which we use to crush the enemy");
     }
+
     @Override
     public String handle (String s) {
         if(s.equalsIgnoreCase("examine")){

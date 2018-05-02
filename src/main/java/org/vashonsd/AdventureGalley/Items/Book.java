@@ -7,11 +7,11 @@ public class Book extends Item {
     private String content;
 
     public Book() {
-        super("book", "What a lovely book of magic spells.", false);
+        super("book", "What a lovely book of magic spells.");
     }
 
     public Book(String name, String description,String content) {
-        super(name, description, false);
+        super(name, description);
         this.content = content;
     }
 

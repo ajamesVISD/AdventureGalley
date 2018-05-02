@@ -5,14 +5,7 @@ import org.vashonsd.AdventureGalley.Interactions.Item;
 public class Baseball extends Item {
 
     Baseball() {
-        super("baseball", "It is a pearly white baseball.", false);
+        super("baseball", "It is a pearly white baseball.");
     }
-    @Override
-    public String handle(String s) {
-        if (s.equalsIgnoreCase("examine")) {
-            return this.getDescription();
-        } else {
-            return "derp.";
-        }
-    }
+
 }

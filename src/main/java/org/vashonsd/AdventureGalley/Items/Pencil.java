@@ -5,14 +5,15 @@ import org.vashonsd.AdventureGalley.Interactions.Item;
 public class Pencil extends Item {
 
     public Pencil () {
-        super("Pencil", "An ordinary looking orange pencil", false);
+        super("Pencil", "An ordinary looking orange pencil");
     }
     public Pencil(String name, String description) {
-        super(name, description, false);
+        super(name, description);
     }
 
     @Override
     public String handle(String s) {
+        String result = "";
         if(s.equalsIgnoreCase("examine")) {
             return this.getDescription();
         }

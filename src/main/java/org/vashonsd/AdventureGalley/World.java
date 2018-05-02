@@ -1,5 +1,6 @@
 package org.vashonsd.AdventureGalley;
 
+import org.vashonsd.AdventureGalley.Interactions.Room;
 import org.vashonsd.AdventureGalley.Items.*;
 
 public class World {

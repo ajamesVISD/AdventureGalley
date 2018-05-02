@@ -1,7 +1,9 @@
 package org.vashonsd.AdventureGalley.Executables;
 
+import org.vashonsd.AdventureGalley.Interactions.Actor;
 import org.vashonsd.AdventureGalley.Interactions.Executable;
 import org.vashonsd.AdventureGalley.Interactions.Item;
+import org.vashonsd.AdventureGalley.Interactions.Response;
 
 /**
  * Enroll this command with an Item subclass so that it handles the word
@@ -9,7 +11,7 @@ import org.vashonsd.AdventureGalley.Interactions.Item;
  */
 public class Examine implements Executable {
 
-    public String execute(Item i) {
-        return i.getDescription();
+    public Response execute(Actor a) {
+        return new Response(a.getDescription(), false);
     }
 }

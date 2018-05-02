@@ -12,5 +12,5 @@ public interface Executable {
     /**
      * Uses the properties and methods of the Item to return a String.
      */
-    String execute(Item i);
+    Response execute(Actor a);
 }

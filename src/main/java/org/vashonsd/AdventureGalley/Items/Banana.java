@@ -10,7 +10,7 @@ import org.vashonsd.AdventureGalley.Executables.Reverse;
 public class Banana extends Item {
 
     public Banana() {
-        super("banana", "a delicious yellow banana.", true);
+        super("banana", "a delicious yellow banana.");
         addExecutable("examine", new Examine());
         addExecutable("reverse", new Reverse());
     }
