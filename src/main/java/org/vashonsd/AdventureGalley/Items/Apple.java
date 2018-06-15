@@ -1,6 +1,7 @@
 package org.vashonsd.AdventureGalley.Items;
 
-import org.vashonsd.AdventureGalley.Interactions.Item;
+import org.vashonsd.AdventureGalley.Executables.Examine;
+import org.vashonsd.AdventureGalley.Executables.Executable;
 
 import java.util.Date;
 
@@ -13,18 +14,19 @@ public class Apple extends Item {
     private Date bestByDate;
 
     public Apple() {
-        super("Pencil", "An ordinary looking orange pencil", true);
+        super("apple", "A delicious looking apple", true);
         birthdate = new Date();
         bestByDate = new Date(birthdate.getTime() + 5*60);
     }
 
     @Override
-    public String handle(String s) {
-        if (s.equalsIgnoreCase("examine")) {
-            return this.getDescription();
-        } else {
-            return "I don't know how to " + s + " an apple.";
-        }
+    protected void addExecutables() {
+        addExecutable(Executable.getExecutableSets("small item"));
+    }
+
+    @Override
+    public void setType(String str) {
+
     }
 
     public String getDescription() {

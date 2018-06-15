@@ -1,6 +1,6 @@
 package org.vashonsd.AdventureGalley;
 
-import org.vashonsd.AdventureGalley.Interactions.Item;
+import org.vashonsd.AdventureGalley.Items.Item;
 
 public class Main {
 
@@ -12,7 +12,7 @@ public class Main {
 
         //prints out items in starter room for the player to see
         System.out.println("In this room, there is:");
-        System.out.println(curRoom.listItemsInRoom());
+//        System.out.println(curRoom.listItemsInRoom());
 
         // offer help, since this is the player's first time playing
         String prompt = input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help'.");
@@ -22,37 +22,37 @@ public class Main {
             String verb = arr[0];  //This is the verb
             String directObject = arr[1];
 
-            if(curRoom.hasItem(directObject)) {
-                Item whichItem = curRoom.getItem(directObject);
-                String response = whichItem.handle(verb);
-                System.out.println(response);
-            } else if(curRoom.hasRoom(verb)) {
-                curRoom = curRoom.getRoom(verb);
-                System.out.println(curRoom.getDescription());
-                System.out.print("In this room, there is:");
-                System.out.print(curRoom.listItemsInRoom());
-            }
-            else if (verb.equalsIgnoreCase("look")) {
-                System.out.println(curRoom.getDescription());
-            }
-            else if (verb.equalsIgnoreCase("quit")) {
-                System.out.println("Are you sure you want to quit? (y/n)");
-                String quitPrompt = input.readLine();
-                if(quitPrompt.equalsIgnoreCase("y")) {
-                    System.out.println("Thanks for playing!");
-                    break;
-                }
-                else {
-                    System.out.println(curRoom.getDescription());
-                }
-            }
-            else if (verb.equalsIgnoreCase("help")){
-                System.out.println(listOfCommands());
-            }
-            else{
-                System.out.println("You can't do that ");
-            }
-            prompt = input.readLine();
+//            if(curRoom.hasItem(directObject)) {
+//                Item whichItem = (Item)curRoom.getItem(directObject);
+//                String response = whichItem.dispatch(verb);
+//                System.out.println(response);
+//            } else if(curRoom.hasRoom(verb)) {
+//                curRoom = curRoom.getRoom(verb);
+//                System.out.println(curRoom.getDescription());
+//                System.out.print("In this room, there is:");
+//                System.out.print(curRoom.listItemsInRoom());
+//            }
+//            else if (verb.equalsIgnoreCase("look")) {
+//                System.out.println(curRoom.getDescription());
+//            }
+//            else if (verb.equalsIgnoreCase("quit")) {
+//                System.out.println("Are you sure you want to quit? (y/n)");
+//                String quitPrompt = input.readLine();
+//                if(quitPrompt.equalsIgnoreCase("y")) {
+//                    System.out.println("Thanks for playing!");
+//                    break;
+//                }
+//                else {
+//                    System.out.println(curRoom.getDescription());
+//                }
+//            }
+//            else if (verb.equalsIgnoreCase("help")){
+//                System.out.println(listOfCommands());
+//            }
+//            else{
+//                System.out.println("You can't do that ");
+//            }
+//            prompt = input.readLine();
         }
     }
 

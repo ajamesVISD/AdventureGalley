@@ -1,7 +1,6 @@
 package org.vashonsd.AdventureGalley.Items;
 
 import org.vashonsd.AdventureGalley.Executables.Examine;
-import org.vashonsd.AdventureGalley.Interactions.Item;
 import org.vashonsd.AdventureGalley.Executables.Reverse;
 
 /**
@@ -11,7 +10,17 @@ public class Banana extends Item {
 
     public Banana() {
         super("banana", "a delicious yellow banana.", true);
-        addExecutable("examine", new Examine());
-        addExecutable("reverse", new Reverse());
+        addExecutable(new Examine());
+        addExecutable(new Reverse());
+    }
+
+    @Override
+    protected void addExecutables() {
+        addExecutable(new Examine());
+    }
+
+    @Override
+    public void setType(String str) {
+
     }
 }

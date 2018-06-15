@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Galley.iml" filepath="$PROJECT_DIR$/Galley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PirateshipServerMessaging/PirateshipService.iml" filepath="$PROJECT_DIR$/../PirateshipServerMessaging/PirateshipService.iml" />
     </modules>
   </component>
 </project>

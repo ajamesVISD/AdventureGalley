@@ -1,15 +1,21 @@
 package org.vashonsd.AdventureGalley.Executables;
 
-import org.vashonsd.AdventureGalley.Interactions.Executable;
-import org.vashonsd.AdventureGalley.Interactions.Item;
+import org.vashonsd.AdventureGalley.Interactions.Actor;
+import org.vashonsd.AdventureGalley.Interactions.Player;
 
 /**
  * Enroll this command with an Item subclass so that it handles the word
  * "examine." Just returns the description.
  */
-public class Examine implements Executable {
+public class Examine extends Executable {
 
-    public String execute(Item i) {
-        return i.getDescription();
+    public Examine() {
+        super();
+        addKeyword("examine");
+        addKeyword("look at");
+    }
+
+    public String execute(Actor a, Player player) {
+        return a.getDescription();
     }
 }

@@ -1,69 +1,60 @@
 package org.vashonsd.AdventureGalley;
-import org.vashonsd.AdventureGalley.Interactions.Item;
+import org.vashonsd.AdventureGalley.Executables.Examine;
+import org.vashonsd.AdventureGalley.Interactions.Actor;
+import org.vashonsd.AdventureGalley.Interactions.Inventory;
+import org.vashonsd.AdventureGalley.Interactions.Player;
+import org.vashonsd.AdventureGalley.Items.Item;
+import org.vashonsd.AdventureGalley.Items.Omniscience;
+import org.vashonsd.AdventureGalley.Items.Traversal;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
-public class Room {
-    private String name;
-    private String description;
-
-
-    HashMap<String, Room> connectedRooms = new HashMap<String, Room>();
-    Inventory roomInventory = new Inventory();
+public class Room extends Actor {
 
     public Room(String name, String description) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
+        inventory.addActor(new Omniscience(), null, false,true);
+    }
+
+    @Override
+    protected void addExecutables() {
+        addExecutable(new Examine());
+    }
+
+    public void broadcast(String str) {
+        for(Player p : inventory.playersInInventory().values()) {
+            p.publish(str);
+        }
+    }
+
+    public void removeActor(Actor a) {
+        inventory.removeActor(a);
+    }
+
+    @Override
+    public void setType(String str) {
 
     }
 
-    public String listItemsInRoom() {
-        return roomInventory.toString();
+    public void addConnectedRoom(Room r, String direction, String description) {
+        inventory.addActor(new Traversal(direction, description, r));
     }
 
-    public boolean hasRoom(String name) {
-        return connectedRooms.containsKey(name);
+    public void addTraversal(Traversal traversal) {
+        inventory.addActor(traversal);
     }
 
-    public Room getRoom(String name) {
-        return connectedRooms.get(name);
-    }
-
-    //This method gets a Room, then uses its name to add it to the list of connected rooms.
-    public void addRoom(Room room) {
-        connectedRooms.put(room.getName(),room);
-    }
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Override
     public String getDescription() {
-        return description;
-    }
-
-    public Set<String> getConnectedRooms(){
-        return connectedRooms.keySet();
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void addItem(Item i) {
-        roomInventory.addItem(i);
-    }
-
-    public boolean hasItem(String name) {
-        return roomInventory.hasItem(name);
-    }
-
-    public Item getItem(String name) {
-        return roomInventory.getItem(name);
+        String result = this.description;
+//        result += getInventory().toString();
+        List<String> splashes = inventory.getSplashes();
+        for(String splash : splashes) {
+            result += "\n" + splash;
+        }
+        return result;
     }
 }

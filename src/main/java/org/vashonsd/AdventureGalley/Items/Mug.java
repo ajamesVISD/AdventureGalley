@@ -1,21 +1,21 @@
 package org.vashonsd.AdventureGalley.Items;
 
-import org.vashonsd.AdventureGalley.Interactions.Item;
+import org.vashonsd.AdventureGalley.Executables.Examine;
+import org.vashonsd.AdventureGalley.Executables.Take;
 
 public class Mug extends Item {
     public Mug(){
         super("Mug","An artisan mug",false);
     }
-    public String handle(String s){
-        if(s.equalsIgnoreCase("examine")){
-            return this.getDescription();
-        }
-        else if(s.equalsIgnoreCase("break")){
-            this.setDescription("Shards of Artisan pottery.");
-            return this.getDescription();
-        }
-        else{
-            return "I don't know how to "+s+" a Mug.";
-        }
+
+    @Override
+    protected void addExecutables() {
+        addExecutable(new Examine());
+        addExecutable(new Take());
+    }
+
+    @Override
+    public void setType(String str) {
+
     }
 }

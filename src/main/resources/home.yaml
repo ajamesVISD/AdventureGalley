@@ -1,0 +1,52 @@
+# First the definitions of the rooms.
+---
+rooms:
+  - uuid: grandHall
+    name: Grand Hall
+    description: You are in a palatial room.
+    items:
+      - name: book
+        splash: A leather-bound book is on the ground.
+      - name: apple
+        splash: A juicy-looking apple is on a shelf.
+      - name: minigame
+        type: 20q
+        splash: Play 20 Questions! Type "play 20q" to start.
+  - uuid: arcade
+    name: Arcade
+    description: Lights flash, bells ring, games entice.
+    items:
+      - name: minigame
+        type: noah
+        splash: Play Rock, Paper, Scissors! Type "play Noah" to start.
+  - uuid: cave
+    name: Cave
+    description: a towering cave glows with luminescent stones. Sounds echo everywhere.
+    items:
+      - name: banana
+        splash: Who left a banana on a cave floor?
+      - name: pencil
+        splash: It looks like a pencil is stuck in the wall of the cave.
+map:
+  - name: grandHall
+    connected:
+      - room: arcade
+        direction: north
+        splash: A door to the north is marked "arcade."
+      - room: cave
+        direction: east
+        splash: A crack in the eastern wall seems to lead to a cave.
+  - name: cave
+    connected:
+      - room: grandHall
+        direction: west
+        splash: Through a fissure to the west you can see the starting entrance.
+  - name: arcade
+    connected:
+      - room: grandHall
+        direction: south
+        splash: A doorway to the south takes you back to the Grand Hall.
+properties:
+  name: Demo World
+  starting room: grandHall
+  greeting: Welcome to a small demonstration world.
