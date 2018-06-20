@@ -19,6 +19,9 @@ rooms:
       - name: minigame
         type: noah
         splash: Play Rock, Paper, Scissors! Type "play Noah" to start.
+#      - name: minigame
+#        type: RPS
+#        splash: A different Rock, Paper, Scissors! Type "play RPS" to start.
   - uuid: cave
     name: Cave
     description: a towering cave glows with luminescent stones. Sounds echo everywhere.
