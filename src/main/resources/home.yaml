@@ -21,7 +21,16 @@ rooms:
         splash: Noah's version of Rock, Paper, Scissors! Type "play Rock" to start.
       - name: minigame
         type: RPS
-        splash: A different Rock, Paper, Scissors! Type "play RPS" to start.
+        splash: A different Rock, Paper, Scissors from Huthaifa! Type "play RPS" to start.
+      - name: minigame
+        type: Hangman
+        splash: You can "play hangman," thanks to Beckett.
+      - name: minigame
+        type: Sean
+        splash: Type "play sean" to play some tic tac toe!
+      - name: minigame
+        type: Blackjack
+        splash: You can play a round of blackjack by typing "play blackjack."
   - uuid: cave
     name: Cave
     description: a towering cave glows with luminescent stones. Sounds echo everywhere.
